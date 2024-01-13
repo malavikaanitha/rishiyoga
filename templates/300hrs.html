@@ -1,0 +1,693 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>300 Hours Yoga Teachers Training Course</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <link href="{% static 'img/favicon.ico' %}" rel="icon">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@500;600;700&family=Open+Sans:wght@400;500&display=swap" rel="stylesheet">
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <link href="{% static 'lib/animate/animate.min.css' %}" rel="stylesheet">
+    <link href="{% static 'lib/owlcarousel/assets/owl.carousel.min.css' %}" rel="stylesheet">
+    <link href="{% static 'lib/lightbox/css/lightbox.min.css' %}" rel="stylesheet">
+
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+
+    <link href="{% static 'css/style.css' %}" rel="stylesheet">
+      <style>
+.carousel-item {
+    height: 650px;
+  }
+#popUpMain {
+  position: fixed;
+  z-index: 1001;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(5px);
+  background-color: rgba(255, 255, 255, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hide-icon {
+    opacity: 0;
+    }
+
+#popup {
+  display: block;
+  position: absolute;
+  left: 58%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 75%;
+  max-height: 75%;
+}
+
+#popup img {
+  max-width: 65%;
+  max-height: 65%;
+}
+
+ .close {
+      color: #D22B2B;
+      top: 50px;
+      right: 35%;
+      position: absolute;
+      font-size: 35px;
+      font-weight: bold;
+      cursor: pointer;
+      z-index: 1;
+    }
+
+@import url("https://fonts.googleapis.com/css2?family=Baloo+2&display=swap");
+$main-green: #79dd09 !default;
+$main-green-rgb-015: rgba(121, 221, 9, 0.1) !default;
+$main-yellow: #bdbb49 !default;
+$main-yellow-rgb-015: rgba(189, 187, 73, 0.1) !default;
+$main-red: #bd150b !default;
+$main-red-rgb-015: rgba(189, 21, 11, 0.1) !default;
+$main-blue: #0076bd !default;
+$main-blue-rgb-015: rgba(0, 118, 189, 0.1) !default;
+
+body {
+
+	font-size: 16px;
+	color: #ffffff;
+	text-rendering: optimizeLegibility;
+	font-weight: initial;
+}
+
+
+a, a:hover {
+	text-decoration: none;
+	transition: color 0.3s ease-in-out;
+}
+
+#pageHeaderTitle {
+	margin: 2rem 0;
+	text-transform: uppercase;
+	text-align: center;
+	font-size: 2.5rem;
+}
+
+
+.postcard {
+  flex-wrap: wrap;
+  display: flex;
+
+  box-shadow: 0 4px 21px -12px rgba(0, 0, 0, 0.66);
+  border-radius: 10px;
+  margin: 0 0 2rem 0;
+  overflow: hidden;
+  position: relative;
+  color: black;
+
+	&.dark {
+		background-color:;
+	}
+	&.light {
+		background-color: #e1e5ea;
+	}
+
+	.t-dark {
+		color: #18151f;
+	}
+
+  a {
+    color: inherit;
+  }
+
+	h1,	.h1 {
+		margin-bottom: 0.5rem;
+		font-weight: 500;
+		line-height: 1.2;
+	}
+
+	.small {
+		font-size: 80%;
+	}
+
+  .postcard__title {
+    font-size: 1.75rem;
+  }
+
+
+  .postcard__bar {
+    width: 50px;
+    height: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    background-color: #424242;
+    transition: width 0.2s ease;
+  }
+
+  .postcard__text {
+    padding: 1.5rem;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .postcard__preview-txt {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-align: justify;
+    height: 100%;
+  }
+
+  .postcard__tagbox {
+    display: flex;
+    flex-flow: row wrap;
+    font-size: 14px;
+    margin: 20px 0 0 0;
+		padding: 0;
+    justify-content: center;
+
+    .tag__item {
+      display: inline-block;
+      background: rgba(83, 83, 83, 0.4);
+      border-radius: 3px;
+      padding: 2.5px 10px;
+      margin: 0 5px 5px 0;
+      cursor: default;
+      user-select: none;
+      transition: background-color 0.3s;
+
+      &:hover {
+        background: rgba(83, 83, 83, 0.8);
+      }
+    }
+  }
+
+
+
+  &:hover .postcard__bar {
+    width: 100px;
+  }
+}
+
+@media screen and (min-width: 769px) {
+  .postcard {
+    flex-wrap: inherit;
+
+    .postcard__title {
+      font-size: 2rem;
+    }
+
+    .postcard__tagbox {
+      justify-content: start;
+    }
+
+    .postcard__img {
+      max-width: 300px;
+      max-height: 100%;
+      transition: transform 0.3s ease;
+    }
+
+    .postcard__text {
+      padding: 3rem;
+      width: 100%;
+    }
+
+    .media.postcard__text:before {
+      content: "";
+      position: absolute;
+      display: block;
+      background: #18151f;
+      top: -20%;
+      height: 130%;
+      width: 55px;
+    }
+
+
+
+  </style>
+</head>
+
+<body>
+<nav class="navbar navbar-expand-lg  navbar-light fixed-top p-0" style="background:white">
+<a class="navbar-brand d-flex flex-row align-items-center px-4 px-lg-5">
+    <img src="{% static 'img/yoga-1.jpg' %}" alt="Logo" style="width: 80px; height: 80px; margin-right: 10px; ">
+    <div>
+        <h1 class="display-1" style="font-size:35px;color:#D22B2B; ">Rishi Yoga</h1>
+        <h1 class="display-1" style="font-size:18px;color:#D22B2B; ">Teachers Training Institute</h1>
+
+    </div>
+</a>
+        <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <div class="navbar-nav ms-auto p-4 p-lg-0">
+                <h1><a href="http://127.0.0.1:8000/" class="nav-item nav-link" class="harrington">Home</a></h1>
+                <h1><a href="http://127.0.0.1:8000/#about" class="nav-item nav-link" class="harrington" style="font-size:17px;color:black">About</a></h1>
+                <h1><a href="http://127.0.0.1:8000/#teams" class="nav-item nav-link" class="harrington" style="font-size:17px;color:black">Team</a></h1>
+
+<div class="nav-item dropdown">
+  <h1 class="harrington" data-bs-toggle="dropdown" style="font-size: 17px;">
+    <a href="#courses" class="nav-link active">
+      Courses
+    </a>
+  </h1>
+  <div class="dropdown-menu bg-light m-0">
+<h1><a href="{% url 'yogaapp:200HoursYogaTeachersTrainingCourse' %}" class="dropdown-item" style="font-size:15px;white-space: nowrap; overflow: hidden; text-overflow: ellipsis; color: black;">
+  200 Hours Yoga TTC
+</a></h1>
+ <h1> <a href="{% url 'yogaapp:300HoursYogaTeachersTrainingCourse' %}" class="dropdown-item" style="font-size:15px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; color: black;">
+  300 Hours Yoga TTC
+</a></h1>
+
+<h1><a href="{% url 'yogaapp:YogaPhilosophyTeachersTraining' %}" class="dropdown-item" style="font-size:15px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; color: black;">
+  Yoga Philosophy  and Meditation TTC
+</a></h1>
+
+<h1><a href="{% url 'yogaapp:ChakraHealerCourse' %}" class="dropdown-item" style="font-size:15px;  white-space: nowrap; overflow: hidden; text-overflow: ellipsis; color: black;">
+  Chakra Healer Course
+</a></h1>
+
+<h1><a href="{% url 'yogaapp:AncientCosmicEnergyHealingProcess' %}" class="dropdown-item" style="font-size:15px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; color: black;">
+  Ancient Cosmic Energy Healing Process
+</a></h1>
+
+<h1><a href="{% url 'yogaapp:PrenatalandPostnatalYogaTTC' %}" class="dropdown-item" style="font-size:15px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; color: black;">
+  Prenatal and Postnatal Yoga TTC
+</a></h1>
+
+<h1><a href="{% url 'yogaapp:Become_A_Healer' %}" class="dropdown-item" style="font-size:15px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; color: black;">
+  Become A Healer
+</a></h1>
+
+  </div>
+</div>
+
+                 <h1><a href="{% url 'yogaapp:Become_A_Healer' %}" class="nav-item nav-link" class="harrington" style="font-size:17px;color:black">Become A Healer</a></h1>
+                               <h1> <a href="{% url 'yogaapp:Spiritual_Retreat' %}" class="nav-item nav-link" class="harrington" style="font-size:17px;color:black">Spiritual Retreat</a></h1>
+
+                <h1><a href="{% url 'yogaapp:Contact' %}" class="nav-item nav-link" class="harrington" style="font-size:17px;color:black">Contact</a></h1>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container-fluid p-0 wow fadeIn" data-wow-delay="0.1s">
+        <div id="header-carousel" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img class="w-100" src="{% static 'img/300hr.jpg' %}"  alt="Image">
+                    <div class="carousel-caption">
+                        <div class="container">
+                            <div class="row justify-content-center">
+                                <div class="col-lg-8">
+                                    <h1 class="display-1 text-white mb-5 animated slideInDown" style="font-size:34px;">Step up to the next level of yoga mastery with our 300-hour TTC.</h1>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<div class="container-xxl py-5" id="about">
+    <div class="container">
+        <div class="row g-5">
+            <div class="col-lg-8 col-md-7 wow fadeInUp" data-wow-delay="0.3s">
+                <h1 class="display-5 mb-4">Welcome to our 300-Hour Yoga Teachers Training Course!
+</h1>
+                <p class="mb-4" style="text-align: justify;">Are you ready to take your yoga practice and teaching skills to new heights? Join us for a transformative journey that will empower you with advanced knowledge, deepen your practice, and equip you to inspire others on their yoga journey. Our comprehensive 300-Hour Yoga Teachers Training Course offers a unique blend of traditional wisdom and modern expertise.
+</div>
+            <div class="col-lg-4 col-md-5 wow fadeInUp" data-wow-delay="0.5s">
+                <div class="border-start ps-4">
+                    <img class="img-fluid rounded-circle mb-3" src="{% static 'img/icon/300f.png' %}" alt="Icon" style="max-width: 150px; height: auto;">
+                 <h4 class="mb-3">What You'll Get:</h4>
+        <span style="white-space: nowrap;">
+            <i class="fas fa-caret-right"  style="color: green;"></i> Advanced asana and philosophy mastery.<br>
+            <i class="fas fa-caret-right" style="color: green;"></i> Exposure to diverse global yoga traditions.<br>
+            <i class="fas fa-caret-right" style="color: green;"></i> Expertise in mindfulness, meditation, and self-care.<br>
+            <i class="fas fa-caret-right" style="color: green;"></i> Refinement of teaching skills for impactful classes.<br>
+            <i class="fas fa-caret-right" style="color: green;"></i> A nurturing retreat experience for deep learning.<br>
+            <i class="fas fa-caret-right" style="color: green;"></i>  300-Hour Yoga Teachers Training Certification.<br>
+        </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid my-5 py-5" data-parallax="scroll">
+
+    <div class="container py-5">
+        <div class="row">
+            <div class="col-lg-6">
+                <article class="postcard dark blue"  style="padding:20px">
+                    <div class="postcard__text">
+                        <h1 class="postcard__title blue"><a href="#"> Elevate Your Yoga Journey:
+</a></h1>
+                        <div class="postcard__bar"></div>
+                        <div class="postcard__preview-txt" style="text-align: justify;">Get ready to explore yoga's core, as our course goes beyond basics, letting you master advanced asanas and delve into profound yoga philosophy through ancient texts, enriching your practice with authenticity and depth.</div>
+                    </div>
+                </article>
+            </div>
+            <div class="col-lg-6">
+                <article class="postcard dark blue"  style="padding:20px">
+                    <div class="postcard__text">
+                        <h1 class="postcard__title blue"><a href="#"> Global Yoga Fusion:</a></h1>
+                        <div class="postcard__bar"></div>
+                        <div class="postcard__preview-txt" style="text-align: justify;">Our training globally integrates yoga styles and traditions, encompassing dynamic Vinyasa flows to serene Yin practices, allowing you to connect with the ones that resonate with you.</div>
+                    </div>
+                </article>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-6">
+                <article class="postcard dark blue"  style="padding:20px">
+                    <div class="postcard__text">
+                        <h1 class="postcard__title blue"><a href="#"> Mind-Body-Spirit Mastery:
+</a></h1>
+                        <div class="postcard__bar"></div>
+                        <div class="postcard__preview-txt" style="text-align: justify;">Unlock the power of mindfulness and meditation, emphasizing the harmonious connection between mind, body, and spirit. Gain expertise in guiding tranquil, self-aware meditation practices.</div>
+                    </div>
+                </article>
+            </div>
+
+            <div class="col-lg-6">
+                <article class="postcard dark blue"  style="padding:20px">
+                    <div class="postcard__text">
+                        <h1 class="postcard__title blue"><a href="#"> GlTeaching Brilliance:
+</a></h1>
+                        <div class="postcard__bar"></div>
+                        <div class="postcard__preview-txt" style="text-align: justify;">Master yoga teaching with our comprehensive curriculum, crafting impactful sequences, refining hands-on adjustments, and honing communication skills to be an exceptional instructor."
+</div>
+                    </div>
+                </article>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-6">
+               <article class="postcard dark blue"  style="padding:20px">
+                    <div class="postcard__text">
+                        <h1 class="postcard__title blue"><a href="#">  Self-Care Revolution:
+
+</a></h1>
+                        <div class="postcard__bar"></div>
+                        <div class="postcard__preview-txt" style="text-align: justify;">Effective teaching depends on self-care. Our training emphasizes the importance of prioritizing your physical and mental well-being through holistic practices, enabling you to nurture your growth and build the resilience required to guide others on their well-being journeys.</div>
+                    </div>
+                </article>
+            </div>
+            <div class="col-lg-6"><article class="postcard dark blue"  style="padding:20px">
+                    <div class="postcard__text">
+                        <h1 class="postcard__title blue"><a href="#">Personal Transformation:
+
+</a></h1>
+                        <div class="postcard__bar"></div>
+                        <div class="postcard__preview-txt" style="text-align: justify;">Prepare for a journey of personal growth and self-discovery through our training, which empowers you as both a teacher and an individual. As you evolve, you'll radiate authenticity and inspiration, impacting not just your teaching but every aspect of your life.</div>
+                    </div>
+                </article>
+            </div>
+        </div>
+        <div class="row">
+
+            <div class="col-lg-6">
+              <article class="postcard dark blue"  style="padding:20px">
+                    <div class="postcard__text">
+                        <h1 class="postcard__title blue"><a href="#">  Retreat Serenity:
+
+
+</a></h1>
+                        <div class="postcard__bar"></div>
+                        <div class="postcard__preview-txt" style="text-align: justify;">Escape to a serene retreat, surrounded by nature's beauty, where you can disconnect from distractions and immerse yourself in an environment that fosters introspection. This tranquil backdrop is perfect for deep learning and self-discovery.</div>
+                    </div>
+                </article>
+            </div>
+            <div class="col-lg-6">
+                <article class="postcard dark blue"  style="padding:20px">
+                    <div class="postcard__text">
+                        <h1 class="postcard__title blue"><a href="#">  Excellence Certified:
+
+</a></h1>
+                        <div class="postcard__bar"></div>
+                        <div class="postcard__preview-txt" style="text-align: justify;">Upon completion, you'll earn a prestigious 300-Hour Certification showcasing your dedication and expertise. This credential enhances your credibility and unlocks global teaching opportunities, enabling you to share your passion on an international stage.</div>
+                    </div>
+                </article>
+            </div>
+        </div>
+<div class="row">
+            <div class="col-lg-6">
+                <article class="postcard dark blue"  style="padding:20px">
+                    <div class="postcard__text">
+                        <h1 class="postcard__title blue"><a href="#">  Start Your Odyssey:
+
+
+</a></h1>
+                        <div class="postcard__bar"></div>
+                        <div class="postcard__preview-txt" style="text-align: justify;">Embark on your yoga journey here, where limitless possibilities await, guided by experienced mentors dedicated to your growth. Embrace the allure of becoming a beacon of yogic inspiration.
+</div>
+                    </div>
+                </article>
+            </div>
+<div class="col-lg-6 d-flex justify-content-center">
+    <img class="img-fluid rounded-circle mb-3" src="{% static 'img/icon/yoga11.png' %}" alt="Icon" style="max-width: 250px; height:">
+</div>
+
+        </div>
+        </div>
+
+    </div>
+</div>
+
+<div class="container-xxl py-5">
+    <div class="container">
+        <div class="row g-5 align-items-center">
+            <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
+                <h1 class="display-6 mb-4" >Specialities of Our Course</h1>
+            </div>
+            <div class="col-lg-6">
+                <div class="circle-container">
+                    <div class="circle-card">
+                        <p><i class="fas fa-check-circle text-success"></i>Combine traditional wisdom with modern teaching methods.</p>
+                    </div>
+                    <div class="circle-card">
+                        <p><i class="fas fa-check-circle text-success"></i> Emphasis on mindfulness, meditation, and holistic well-being.
+</p>
+                    </div>
+                    <div class="circle-card">
+                        <p><i class="fas fa-check-circle text-success"></i> In-depth exploration of diverse yoga traditions.
+</p>
+                    </div>
+                    <div class="circle-card">
+                        <p><i class="fas fa-check-circle text-success"></i> Hands-on guidance from experienced mentors.
+</div>
+                    <div class="circle-card">
+                        <p><i class="fas fa-check-circle text-success"></i> A supportive community of fellow practitioners.
+  </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+.circle-card {
+    display: flex;
+    align-items: center;
+    margin: 10px;
+}
+
+.circle-card i {
+    margin-right: 10px;
+}
+</style>
+
+
+<marquee behavior="scroll" direction="left" >
+           <h1 class="mb-4" style="color:#D22B2B;font-size:25px">Your mat is waiting—are you ready to take the first step?</h1>
+</marquee>
+
+    <div class="container-xxl py-5" id="courses">
+        <div class="container">
+            <div class="text-center mx-auto wow fadeInUp" data-wow-delay="0.1s" style="max-width: 500px;">
+                <p class="fs-5 fw-bold text-primary">Our Courses</p>
+                <h1 class="display-5 mb-5">Courses That We Offer For You</h1>
+            </div>
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="service-item rounded d-flex h-100">
+                        <div class="service-img rounded">
+                            <img class="img-fluid" src="{% static 'img/icon/200hr.jpg' %}" alt="">
+                        </div>
+                        <div class="service-text rounded p-5">
+                            <div class="btn-square rounded-circle mx-auto mb-3">
+                                <img class="img-fluid rounded-circle" src="{% static 'img/icon/200hrs2.png' %}" alt="Icon">
+                            </div>
+                            <h4 class="mb-3">200 Hours Yoga TTC</h4>
+                            <p class="mb-4">Enriching 200-Hour Yoga Teacher Training for personal growth and teaching mastery.</p>
+                            <a class="btn btn-sm" href="{% url 'yogaapp:200HoursYogaTeachersTrainingCourse' %}"><i class="fa fa-plus text-primary me-2"></i>Read More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="service-item rounded d-flex h-100">
+                        <div class="service-img rounded">
+                            <img class="img-fluid" src="{% static 'img/icon/300hrs.jpg' %}" alt="">
+                        </div>
+                        <div class="service-text rounded p-5">
+                            <div class="btn-square rounded-circle mx-auto mb-3">
+                                <img class="img-fluid rounded-circle" src="{% static 'img/icon/30hr.png' %}" alt="Icon">
+                            </div>
+                            <h4 class="mb-3">300 Hours Yoga TTC</h4>
+                            <p class="mb-4">Transform in 300 hours with our comprehensive Yoga Teacher Training Course.</p>
+                            <a class="btn btn-sm" href="{% url 'yogaapp:300HoursYogaTeachersTrainingCourse' %}"><i class="fa fa-plus text-primary me-2"></i>Read More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                    <div class="service-item rounded d-flex h-100">
+                        <div class="service-img rounded">
+                            <img class="img-fluid" src="{% static 'img/icon/philo12.jpg' %}" alt="">
+                        </div>
+                        <div class="service-text rounded p-5">
+                            <div class="btn-square rounded-circle mx-auto mb-3">
+                                <img class="img-fluid rounded-circle" src="{% static 'img/icon/philo21.png' %}" alt="Icon">
+                            </div>
+                            <h4 class="mb-3">Yoga Philosophy Teachers Training</h4>
+                            <p class="mb-4">Explore the essence of yoga through our Philosophy Teachers Training.</p>
+                            <a class="btn btn-sm" href="{% url 'yogaapp:YogaPhilosophyTeachersTraining' %}"><i class="fa fa-plus text-primary me-2"></i>Read More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="service-item rounded d-flex h-100">
+                        <div class="service-img rounded">
+                            <img class="img-fluid" src="{% static 'img/icon/cosmicyoga.jpg' %}" alt="">
+                        </div>
+                        <div class="service-text rounded p-5">
+                            <div class="btn-square rounded-circle mx-auto mb-3">
+                                <img class="img-fluid rounded-circle" src="{% static 'img/icon/chkra1.jpg' %}" alt="Icon">
+                            </div>
+                            <h4 class="mb-3">Chakra Healer Course </h4>
+                            <p class="mb-4">Discover the power of Chakra healing with our transformative Chakra Healer Course.</p>
+                            <a class="btn btn-sm" href="{% url 'yogaapp:ChakraHealerCourse' %}"><i class="fa fa-plus text-primary me-2"></i>Read More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="service-item rounded d-flex h-100">
+                        <div class="service-img rounded">
+                            <img class="img-fluid" src="{% static 'img/icon/cosm.jpg' %}" alt="">
+                        </div>
+                        <div class="service-text rounded p-5">
+                            <div class="btn-square rounded-circle mx-auto mb-3">
+                                <img class="img-fluid rounded-circle" src="{% static 'img/icon/cosmic1.png' %}" alt="Icon">
+
+                            </div>
+
+                            <h4 class="mb-3">Ancient Cosmic Energy Healing Process</h4>
+                            <p class="mb-4"> Harnessing timeless forces for holistic well-being.</p>
+                            <a class="btn btn-sm" href="{% url 'yogaapp:AncientCosmicEnergyHealingProcess' %}"><i class="fa fa-plus text-primary me-2"></i>Read More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                    <div class="service-item rounded d-flex h-100">
+                        <div class="service-img rounded">
+                            <img class="img-fluid" src="{% static 'img/icon/pre45.jpg' %}" alt="">
+                        </div>
+                        <div class="service-text rounded p-5">
+                            <div class="btn-square rounded-circle mx-auto mb-3">
+                                <img class="img-fluid" src="{% static 'img/icon/pre.png' %}" alt="Icon">
+                            </div>
+                            <h4 class="mb-3">Prenatal and Postnatal Yoga TTC</h4>
+                            <p class="mb-4"> Empower yourself to guide expectant and new mothers through yoga for a healthy journey into motherhood.</p>
+                            <a class="btn btn-sm" href="{% url 'yogaapp:PrenatalandPostnatalYogaTTC' %}"><i class="fa fa-plus text-primary me-2"></i>Read More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+  <div class="container-fluid bg-dark text-light footer mt-5 py-5 wow fadeIn"  id="footer" data-wow-delay="0.1s">
+    <div class="container py-5">
+        <div class="row g-5">
+            <div class="col-lg-4">
+                <h4 class="text-white mb-4">Our Office</h4>
+                <p class="mb-2">
+                    <i class="fa fa-map-marker-alt me-3"></i>
+                    Rishi Yoga and Meditation Academy<br>
+                    <i class="fa fa-map-marker-alt me-3 hide-icon"  style="color: transparent;"></i>&nbsp;Ramankulangara Nagar - 166<br>
+                    <i class="fa fa-map-marker-alt me-3 hide-icon"  style="color: transparent;"></i>&nbsp;Kavanad P.O.,<br>
+                    <i class="fa fa-map-marker-alt me-3 hide-icon"  style="color: transparent;"></i>&nbsp;Kollam - 691003 Kerala, India.
+                </p>
+
+             <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>Mob: (91)9008663139<br>
+
+                <p class="mb-2"><i class="fa fa-envelope me-3"></i>info@rishiyogaschool.com</p>
+
+                               <div class="d-flex pt-2">
+                   <!--                    <a class="btn btn-square btn-outline-light rounded-circle me-2" href=""><i class="fab fa-twitter"></i></a>-->
+                    <a class="btn btn-square btn-outline-light rounded-circle me-2" href="https://www.facebook.com/rishiacademy?mibextid=hIlR13"><i class="fab fa-facebook-f"></i></a>
+                    <a class="btn btn-square btn-outline-light rounded-circle me-2" href="https://youtube.com/@rishiyogaacademy2481?si=0Z5kfSy4srUMH8br"><i class="fab fa-youtube"></i></a>
+                                    <a class="btn btn-square btn-outline-light rounded-circle me-2" href="https://www.rishiyogaschool.com"><i class="fas fa-star"></i></a>
+
+                </div>
+            </div>
+
+            <div class="col-lg-4">
+                <h4 class="text-white mb-4">Quick Links</h4>
+                <a class="btn btn-link" href="">Home</a>
+                <a class="btn btn-link" href="#about">About us</a>
+                <a class="btn btn-link" href="{% url 'yogaapp:Contact' %}">Contact Us</a>
+                <a class="btn btn-link" href="#courses">Our Courses</a>
+            </div>
+            <div class="col-lg-4">
+                   <img class="img-fluid rounded-circle mb-3" src="{% static 'img/yoga-1.jpg' %}" alt="Icon" style="max-width: 300px; height: auto;">
+
+            </div>
+        </div>
+    </div>
+</div>
+
+    <div class="container-fluid copyright py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                    &copy; Rishi Yoga Teachers Training Institute, All Right Reserved.
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+<a href="{% url 'yogaapp:whatsapp' %}" class="btn btn-lg btn-primary btn-lg-square rounded-circle back-to-top">
+<img src="{% static 'img/whatsapp.png' %}" alt="WhatsApp Symbol" width="50" height="50">
+</a>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="{% static 'lib/wow/wow.min.js' %}"></script>
+    <script src="{% static 'lib/easing/easing.min.js' %}"></script>
+    <script src="{% static 'lib/waypoints/waypoints.min.js' %}"></script>
+    <script src="{% static 'lib/owlcarousel/owl.carousel.min.js' %}"></script>
+    <script src="{% static 'lib/counterup/counterup.min.js' %}"></script>
+    <script src="{% static 'lib/parallax/parallax.min.js' %}"></script>
+    <script src="{% static 'lib/isotope/isotope.pkgd.min.js' %}"></script>
+    <script src="{% static 'lib/lightbox/js/lightbox.min.js' %}"></script>
+
+    <script src="% static 'js/main.js' %}"></script>
+</body>
+
+</html>
