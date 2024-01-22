@@ -31,6 +31,10 @@ def test(request):
 
 def instructor(request):
     return render(request, "instructor.html")
+def sitemap(request):
+    return render(request, "sitemap.xml")
+def robot(request):
+    return render(request, "robot.txt")
 
 def whatsapp(request):
     whatsapp_number = '919008663139'

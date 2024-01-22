@@ -16,5 +16,8 @@ urlpatterns = [
     path('Become_A_Healer', views.Become_A_Healer, name='Become_A_Healer'),
     path('Spiritual_Retreat', views.Spiritual_Retreat, name='Spiritual_Retreat'),
     path('Contact', views.Contact, name='Contact'),
+    path('sitemap', views.sitemap, name='sitemap'),
+    path('robot', views.robot, name='robot'),
+
 ]
 
